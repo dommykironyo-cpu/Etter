@@ -48,7 +48,7 @@ nav a:hover {
 /* Intro */
 .intro {
   padding: 20px;
-  background: white;
+  background: black;
   margin: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -79,7 +79,7 @@ nav a:hover {
 }
 
 .product-card {
-  background: white;
+  background: black;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   text-align: center;
