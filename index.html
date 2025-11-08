@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doan Company | Glass & Mirror Dealers</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Doan Company</title>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">DOAN <span>COMPANY</span></div>
-    <p>Your trusted glass & mirror supplier in Kenya</p>
+    <h1>Doan Company</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main id="home">
-    <section class="intro">
-      <h2>Welcome to Doan Company</h2>
+  <main>
+    <section class="about">
+      <h2>About Us</h2>
       <p>
-        We specialize in premium <strong>glass, mirrors, and accessories</strong> 
-        for residential, commercial, and industrial use.  
-        Our products are high-quality, durable, and competitively priced.  
-        For bulk or custom orders, prices are slightly negotiable.
+        Welcome to <strong>Doan Company</strong> — your trusted supplier of high-quality glass and mirror products.
+        We are dedicated to delivering the best materials and professional services to builders, designers, and
+        homeowners across the region.
       </p>
-    </section>
 
-    <section id="products">
-      <h2>Our Featured Products</h2>
-      <div class="search-container">
-        <input type="text" id="searchBox" placeholder="Search product..." onkeyup="searchProducts()" />
-      </div>
+      <h3>Our Mission</h3>
+      <p>
+        To provide premium glass and mirror products at fair prices, ensuring clarity, safety, and satisfaction
+        in every project.
+      </p>
 
-      <div class="product-grid" id="productGrid">
-        <!-- Products will be added here via JS -->
-      </div>
-    </section>
+      <h3>Our Values</h3>
+      <ul>
+        <li>Integrity in every transaction</li>
+        <li>Commitment to quality</li>
+        <li>Customer-first service</li>
+        <li>Innovation in glass solutions</li>
+      </ul>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Doan Company</strong><br>
-      📍 Nairobi, Kenya<br>
-      📞 <a href="tel:+254700000000">+254 700 000 000</a><br>
-      💬 <a href="https://wa.me/254700000000" target="_blank">Chat on WhatsApp</a><br>
-      ✉️ doancompany@gmail.com</p>
+      <h3>Why Choose Us?</h3>
+      <p>
+        - Competitive pricing on all glass and mirror types.<br>
+        - Expert cutting, delivery, and installation services.<br>
+        - Reliable supply for both retail and wholesale clients.
+      </p>
     </section>
   </main>
 
@@ -56,43 +55,3 @@
   </footer>
 </body>
 </html>
-const products = [
-  { name: "3mm Clear Glass", price: 50, image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be" },
-  { name: "4mm Mirror", price: 100, image: "https://images.unsplash.com/photo-1616627458505-5b9f9d4c17d5" },
-  { name: "5mm One-way Blue", price: 125, image: "https://images.unsplash.com/photo-1604079628040-9438e311a39b" },
-  { name: "4mm Oneway Grey", price: 105, image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664" },
-  { name: "Premium Putty", price: 2000, image: "https://images.unsplash.com/photo-1621605815971-9beeb7e94d2f" },
-  { name: "Glass Cutter", price: 250, image: "https://images.unsplash.com/photo-1581093588401-22c9b6f94f16" },
-  { name: "Mirror Screws", price: 1050, image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61" },
-  { name: "Glass Sticker", price: 20, image: "https://images.unsplash.com/photo-1606813903172-04a0da9e4d7a" },
-];
-
-function displayProducts(list) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-
-  list.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    card.innerHTML = `
-      <img src="${p.image}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>Ksh ${p.price}</p>
-      <button onclick="contactDoan('${p.name}')">Enquire</button>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-function searchProducts() {
-  const query = document.getElementById("searchBox").value.toLowerCase();
-  const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-  displayProducts(filtered);
-}
-
-function contactDoan(product) {
-  const msg = encodeURIComponent(`Hello Doan Company, I would like to know more about: ${product}`);
-  window.open(`https://wa.me/254700000000?text=${msg}`, "_blank");
-}
-
-displayProducts(products);
